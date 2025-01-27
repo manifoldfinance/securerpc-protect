@@ -1,28 +1,21 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 // Disabled
 //import { APIEndpoint } from "./components/api-endpoint";
-import { BenchmarksTable } from "./components/benchmarks-table";
-import { CashCounter } from "./components/cash-counter";
-import { FeatureGrid } from "./components/feature-grid";
-import { MevProtection } from "./components/mev-protection";
-import { PrivacySection } from "./components/privacy-section";
-import type { Metadata } from "next";
-import { generateMetadata } from "./components/metadata";
-import { AddSecureRPCToMetaMask } from "./components/add_metamask";
+import { BenchmarksTable } from "./components/benchmarks-table"
+import { CashCounter } from "./components/cash-counter"
+import { FeatureGrid } from "./components/feature-grid"
+import { MevProtection } from "./components/mev-protection"
+import { PrivacySection } from "./components/privacy-section"
+import type { Metadata } from "next"
+import { generateMetadata } from "./components/metadata"
+import { AddSecureRPCToMetaMask } from "./components/add_metamask"
 
 export const metadata: Metadata = {
 	title: "SecureRPC | Secure Ethereum RPC Infrastructure",
 	description:
 		"SecureRPC offers high-performance, MEV-protected RPC infrastructure for Ethereum developers and applications. Experience secure and efficient blockchain interactions.",
-	keywords: [
-		"SecureRPC",
-		"Ethereum",
-		"RPC",
-		"MEV Protection",
-		"Blockchain Infrastructure",
-		"Web3 Development",
-	],
+	keywords: ["SecureRPC", "Ethereum", "RPC", "MEV Protection", "Blockchain Infrastructure", "Web3 Development"],
 	openGraph: {
 		title: "Next.js",
 		description: "Connect to Opportunities",
@@ -42,7 +35,7 @@ export const metadata: Metadata = {
 		// site: 'https://securerpc.com',
 		creator: "@foldfinance",
 	},
-};
+}
 export default function Page() {
 	return (
 		<main className="flex-grow">
@@ -53,30 +46,24 @@ export default function Page() {
 					<div className="container mx-auto px-6 py-24">
 						<div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 							<div className="max-w-2xl">
-								<p className="text-[#31C4B9] text-sm font-medium mb-4">
-									Manifold Finance
-								</p>
+								<p className="text-[#31C4B9] text-sm font-medium mb-4">Manifold Finance</p>
 								<h1 className="text-4xl md:text-5xl font-bold mb-6">
 									Protect your trades <br />
 									Get 100% cash back
 								</h1>
 								<p className="text-lg text-gray-400 mb-8">
-									SecureRPC provides robust, high-performance, and MEV-protected
-									RPC infrastructure for Ethereum developers and applications
+									SecureRPC provides robust, high-performance, and MEV-protected RPC infrastructure for Ethereum
+									developers and applications
 								</p>
 								<div className="flex flex-wrap gap-4">
-									<Button className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-white font-semibold">
-										Get started
-									</Button>
+									<Button className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-white font-semibold">Get started</Button>
 									<Button
 										variant="outline"
 										className="border-white/10 hover:bg-white/5 text-white hover:text-[#31C4B9]"
 									>
 										Why SecureRPC?
 									</Button>
-									<AddSecureRPCToMetaMask
-										rpcs={["https://api.securerpc.com/v1"]}
-									/>
+									<AddSecureRPCToMetaMask rpcs={["https://api.securerpc.com/v1"]} />
 								</div>
 								{/** 	  <Button variant="ghost" className="mt-4 text-white hover:text-white hover:bg-white/5">
 					Join Telegram
@@ -119,5 +106,5 @@ export default function Page() {
 				<PrivacySection />
 			</section>
 		</main>
-	);
+	)
 }

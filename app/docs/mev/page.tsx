@@ -1,5 +1,5 @@
-import { MevTable } from "@/app/components/mev-table";
-import React from "react";
+import { MevTable } from "@/app/components/mev-table"
+import React from "react"
 
 const MEVActivitiesPage: React.FC = () => {
 	return (
@@ -7,9 +7,7 @@ const MEVActivitiesPage: React.FC = () => {
 			<section className="relative overflow-hidden">
 				<div className="relative z-20">
 					<div className="container mx-auto px-6 py-32">
-						<h1 className="text-4xl md:text-5xl font-bold mb-8">
-							MEV Activities
-						</h1>
+						<h1 className="text-4xl md:text-5xl font-bold mb-8">MEV Activities</h1>
 						<p className="text-lg text-gray-400 mb-12">
 							Explore the various MEV activities that exist on the blockchain.
 						</p>
@@ -20,7 +18,7 @@ const MEVActivitiesPage: React.FC = () => {
 				</div>
 			</section>
 		</div>
-	);
-};
+	)
+}
 
-export default MEVActivitiesPage;
+export default MEVActivitiesPage

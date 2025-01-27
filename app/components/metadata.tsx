@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 
 interface MetadataProps {
-	title: string;
-	description: string;
-	keywords: string[];
-	ogImage?: string;
+	title: string
+	description: string
+	keywords: string[]
+	ogImage?: string
 	ogType?:
 		| "website"
 		| "article"
@@ -17,7 +17,7 @@ interface MetadataProps {
 		| "video.movie"
 		| "video.episode"
 		| "video.tv_show"
-		| "video.other";
+		| "video.other"
 }
 
 export function generateMetadata({
@@ -50,5 +50,5 @@ export function generateMetadata({
 			description,
 			images: [ogImage],
 		},
-	};
+	}
 }

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
 	type ColumnDef,
@@ -11,26 +11,19 @@ import {
 	getPaginationRowModel,
 	getSortedRowModel,
 	useReactTable,
-} from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown } from "lucide-react";
-import * as React from "react";
+} from "@tanstack/react-table"
+import { ArrowUpDown, ChevronDown } from "lucide-react"
+import * as React from "react"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
 	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/components/ui/table";
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 const data = [
 	{
@@ -58,21 +51,19 @@ const data = [
 		mevShare: "Significant share goes to validators",
 		relayProtect: "Users retain majority of profits",
 	},
-];
+]
 
 export type Comparison = {
-	feature: string;
-	mevShare: string;
-	relayProtect: string;
-};
+	feature: string
+	mevShare: string
+	relayProtect: string
+}
 
 export const columns: ColumnDef<Comparison>[] = [
 	{
 		accessorKey: "feature",
 		header: "Feature",
-		cell: ({ row }) => (
-			<div className="font-medium">{row.getValue("feature")}</div>
-		),
+		cell: ({ row }) => <div className="font-medium">{row.getValue("feature")}</div>,
 	},
 	{
 		accessorKey: "mevShare",
@@ -86,7 +77,7 @@ export const columns: ColumnDef<Comparison>[] = [
 					MEV-Share/Blocker
 					<ArrowUpDown className="ml-2 h-4 w-4" />
 				</Button>
-			);
+			)
 		},
 		cell: ({ row }) => <div>{row.getValue("mevShare")}</div>,
 	},
@@ -102,19 +93,16 @@ export const columns: ColumnDef<Comparison>[] = [
 					Relay Protect
 					<ArrowUpDown className="ml-2 h-4 w-4" />
 				</Button>
-			);
+			)
 		},
 		cell: ({ row }) => <div>{row.getValue("relayProtect")}</div>,
 	},
-];
+]
 
 export function ComparisonTable() {
-	const [sorting, setSorting] = React.useState<SortingState>([]);
-	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-		[],
-	);
-	const [columnVisibility, setColumnVisibility] =
-		React.useState<VisibilityState>({});
+	const [sorting, setSorting] = React.useState<SortingState>([])
+	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
+	const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
 
 	const table = useReactTable({
 		data,
@@ -131,7 +119,7 @@ export function ComparisonTable() {
 			columnFilters,
 			columnVisibility,
 		},
-	});
+	})
 
 	return (
 		<div className="w-full p-4">
@@ -139,24 +127,16 @@ export function ComparisonTable() {
 				<Input
 					placeholder="Filter features..."
 					value={(table.getColumn("feature")?.getFilterValue() as string) ?? ""}
-					onChange={(event) =>
-						table.getColumn("feature")?.setFilterValue(event.target.value)
-					}
+					onChange={(event) => table.getColumn("feature")?.setFilterValue(event.target.value)}
 					className="max-w-sm bg-white/5 border-white/10 text-white"
 				/>
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
-						<Button
-							variant="outline"
-							className="ml-auto border-white/10 text-white hover:bg-white/5"
-						>
+						<Button variant="outline" className="ml-auto border-white/10 text-white hover:bg-white/5">
 							Columns <ChevronDown className="ml-2 h-4 w-4" />
 						</Button>
 					</DropdownMenuTrigger>
-					<DropdownMenuContent
-						align="end"
-						className="bg-[#1f1f1f] border-white/10"
-					>
+					<DropdownMenuContent align="end" className="bg-[#1f1f1f] border-white/10">
 						{table
 							.getAllColumns()
 							.filter((column) => column.getCanHide())
@@ -166,13 +146,11 @@ export function ComparisonTable() {
 										key={column.id}
 										className="capitalize text-white"
 										checked={column.getIsVisible()}
-										onCheckedChange={(value) =>
-											column.toggleVisibility(!!value)
-										}
+										onCheckedChange={(value) => column.toggleVisibility(!!value)}
 									>
 										{column.id}
 									</DropdownMenuCheckboxItem>
-								);
+								)
 							})}
 					</DropdownMenuContent>
 				</DropdownMenu>
@@ -185,14 +163,9 @@ export function ComparisonTable() {
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id} className="text-white">
-											{header.isPlaceholder
-												? null
-												: flexRender(
-														header.column.columnDef.header,
-														header.getContext(),
-													)}
+											{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
 										</TableHead>
-									);
+									)
 								})}
 							</TableRow>
 						))}
@@ -200,27 +173,17 @@ export function ComparisonTable() {
 					<TableBody>
 						{table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row) => (
-								<TableRow
-									key={row.id}
-									data-state={row.getIsSelected() && "selected"}
-									className="border-white/10"
-								>
+								<TableRow key={row.id} data-state={row.getIsSelected() && "selected"} className="border-white/10">
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id} className="text-white py-4">
-											{flexRender(
-												cell.column.columnDef.cell,
-												cell.getContext(),
-											)}
+											{flexRender(cell.column.columnDef.cell, cell.getContext())}
 										</TableCell>
 									))}
 								</TableRow>
 							))
 						) : (
 							<TableRow>
-								<TableCell
-									colSpan={columns.length}
-									className="h-24 text-center text-white"
-								>
+								<TableCell colSpan={columns.length} className="h-24 text-center text-white">
 									No results.
 								</TableCell>
 							</TableRow>
@@ -230,8 +193,8 @@ export function ComparisonTable() {
 			</div>
 			<div className="flex items-center justify-end space-x-2 py-4">
 				<div className="text-sm text-gray-400">
-					{table.getFilteredSelectedRowModel().rows.length} of{" "}
-					{table.getFilteredRowModel().rows.length} row(s) selected.
+					{table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s)
+					selected.
 				</div>
 				<div className="space-x-2">
 					<Button
@@ -255,5 +218,5 @@ export function ComparisonTable() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

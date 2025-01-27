@@ -1,21 +1,19 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import React from "react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link"
+import React from "react"
+import { Button } from "@/components/ui/button"
 
 export default function GettingStartedPage() {
 	const handleCopy = (text: string) => {
-		navigator.clipboard.writeText(text);
-	};
+		navigator.clipboard.writeText(text)
+	}
 	return (
 		<div className="max-w-3xl">
-			<h1 className="text-4xl font-bold mb-6">
-				Getting Started with SecureRPC
-			</h1>
+			<h1 className="text-4xl font-bold mb-6">Getting Started with SecureRPC</h1>
 			<p className="mb-8">
-				Welcome to the SecureRPC documentation. This guide will help you get
-				started with using SecureRPC in your projects.
+				Welcome to the SecureRPC documentation. This guide will help you get started with using SecureRPC in your
+				projects.
 			</p>
 
 			<section className="mb-8">
@@ -123,30 +121,19 @@ export default function GettingStartedPage() {
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">What is SecureRPC?</h2>
 				<p className="mb-4">
-					SecureRPC is an open-source backend framework for building robust,
-					performant, and maintainable crypto apps. It allows you to rapidly
-					build an API for any EVM smart contract.
+					SecureRPC is an open-source backend framework for building robust, performant, and maintainable crypto apps.
+					It allows you to rapidly build an API for any EVM smart contract.
 				</p>
 			</section>
 
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">Key Features</h2>
 				<ul className="list-disc list-inside mb-4">
-					<li>
-						Fast Indexing: SecureRPC offers lightning-fast indexing
-						capabilities.
-					</li>
-					<li>
-						MEV-Safe: Built with MEV protection for enhanced user experience.
-					</li>
+					<li>Fast Indexing: SecureRPC offers lightning-fast indexing capabilities.</li>
+					<li>MEV-Safe: Built with MEV protection for enhanced user experience.</li>
 					<li>Flexible: Easily adaptable to various blockchain projects.</li>
-					<li>
-						Stable API: SecureRPC provides a stable API with minimal latency.
-					</li>
-					<li>
-						Real-time Updates: Supports real-time subscriptions for live data
-						updates.
-					</li>
+					<li>Stable API: SecureRPC provides a stable API with minimal latency.</li>
+					<li>Real-time Updates: Supports real-time subscriptions for live data updates.</li>
 				</ul>
 			</section>
 
@@ -156,40 +143,28 @@ export default function GettingStartedPage() {
 				<ul className="list-disc list-inside mb-4">
 					<li>
 						Follow our{" "}
-						<Link
-							href="/docs/quick-start"
-							className="text-blue-400 hover:underline"
-						>
+						<Link href="/docs/quick-start" className="text-blue-400 hover:underline">
 							Quick Start Guide
 						</Link>{" "}
 						for a rapid setup.
 					</li>
 					<li>
 						Check out the detailed{" "}
-						<Link
-							href="/docs/installation"
-							className="text-blue-400 hover:underline"
-						>
+						<Link href="/docs/installation" className="text-blue-400 hover:underline">
 							Installation
 						</Link>{" "}
 						guide for a more comprehensive setup.
 					</li>
 					<li>
 						Learn about{" "}
-						<Link
-							href="/docs/configuration"
-							className="text-blue-400 hover:underline"
-						>
+						<Link href="/docs/configuration" className="text-blue-400 hover:underline">
 							Configuration
 						</Link>{" "}
 						options to customize SecureRPC for your needs.
 					</li>
 					<li>
 						Explore the{" "}
-						<Link
-							href="/docs/api-reference"
-							className="text-blue-400 hover:underline"
-						>
+						<Link href="/docs/api-reference" className="text-blue-400 hover:underline">
 							API Reference
 						</Link>{" "}
 						for in-depth information on SecureRPC's capabilities.
@@ -198,5 +173,5 @@ export default function GettingStartedPage() {
 				<p>Happy building with SecureRPC!</p>
 			</section>
 		</div>
-	);
+	)
 }

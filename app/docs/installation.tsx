@@ -5,9 +5,7 @@ export default function InstallationPage() {
 
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">Prerequisites</h2>
-				<p className="mb-4">
-					Before you begin, ensure you have the following installed:
-				</p>
+				<p className="mb-4">Before you begin, ensure you have the following installed:</p>
 				<ul className="list-disc pl-6 space-y-2">
 					<li>Node.js (version 14 or later)</li>
 					<li>npm or yarn</li>
@@ -86,10 +84,7 @@ export default function InstallationPage() {
 				<h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
 				<p className="mb-4">
 					Now that you have SecureRPC installed, you can proceed to the{" "}
-					<a
-						href="/docs/configuration"
-						className="text-blue-400 hover:underline"
-					>
+					<a href="/docs/configuration" className="text-blue-400 hover:underline">
 						Configuration
 					</a>{" "}
 					guide to set up your project, or jump right into the{" "}
@@ -100,5 +95,5 @@ export default function InstallationPage() {
 				</p>
 			</section>
 		</div>
-	);
+	)
 }

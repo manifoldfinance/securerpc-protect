@@ -1,6 +1,6 @@
-import { Github } from "lucide-react";
-import Link from "next/link";
-import { SiteSearch } from "./site-search";
+import { Github } from "lucide-react"
+import Link from "next/link"
+import { SiteSearch } from "./site-search"
 
 export function Navigation() {
 	return (
@@ -11,34 +11,19 @@ export function Navigation() {
 				</Link>
 				<div className="flex items-center gap-6">
 					<nav className="hidden md:flex items-center gap-6">
-						<Link
-							href="/docs"
-							className="text-sm text-gray-400 hover:text-white transition-colors"
-						>
+						<Link href="/docs" className="text-sm text-gray-400 hover:text-white transition-colors">
 							Documentation
 						</Link>
-						<Link
-							href="/solutions"
-							className="text-sm text-gray-400 hover:text-white transition-colors"
-						>
+						<Link href="/solutions" className="text-sm text-gray-400 hover:text-white transition-colors">
 							Solutions
 						</Link>
-						<Link
-							href="/comparison"
-							className="text-sm text-gray-400 hover:text-white transition-colors"
-						>
+						<Link href="/comparison" className="text-sm text-gray-400 hover:text-white transition-colors">
 							Comparison
 						</Link>
-						<Link
-							href="/changelog"
-							className="text-sm text-gray-400 hover:text-white transition-colors"
-						>
+						<Link href="/changelog" className="text-sm text-gray-400 hover:text-white transition-colors">
 							Changelog
 						</Link>
-						<Link
-							href="/about"
-							className="text-sm text-gray-400 hover:text-white transition-colors"
-						>
+						<Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors">
 							About
 						</Link>
 					</nav>
@@ -54,5 +39,5 @@ export function Navigation() {
 				</div>
 			</div>
 		</header>
-	);
+	)
 }

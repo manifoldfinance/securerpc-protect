@@ -1,6 +1,6 @@
-import { Github, Send, Twitter } from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import { Github, Send, Twitter } from "lucide-react"
+import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
 
 const footerLinks = [
 	{ name: "Home", href: "/" },
@@ -10,13 +10,13 @@ const footerLinks = [
 	{ name: "About", href: "/about" },
 	//	{ name: "Impressum", href: "/impressum" },
 	{ name: "Security", href: "/security" },
-];
+]
 
 const socialLinks = [
 	{ icon: Github, href: "https://github.com/manifoldfinance" },
 	{ icon: Twitter, href: "https://twitter.com/foldfinance" },
 	{ icon: Send, href: "https://t.me/manifoldfinance" },
-];
+]
 
 export function Footer() {
 	return (
@@ -66,16 +66,10 @@ export function Footer() {
 					</div>
 				</div> */}
 						<div className="flex items-center gap-3">
-							<Badge
-								className="bg-green-900/50 text-green-400 hover:bg-green-900/50"
-								variant="secondary"
-							>
+							<Badge className="bg-green-900/50 text-green-400 hover:bg-green-900/50" variant="secondary">
 								API: Operational
 							</Badge>
-							<Badge
-								className="bg-yellow-900/50 text-yellow-400 hover:bg-yellow-900/50"
-								variant="secondary"
-							>
+							<Badge className="bg-yellow-900/50 text-yellow-400 hover:bg-yellow-900/50" variant="secondary">
 								Warrant Canary: Active
 							</Badge>
 						</div>
@@ -83,13 +77,12 @@ export function Footer() {
 						{/* Copyright */}
 						<div className="mt-12 pt-6 border-t border-white/5">
 							<div className="text-sm text-gray-500 hover:text-gray-400 transition-colors duration-200">
-								&copy; {new Date().getFullYear()} SecureRPC, Manifold Finance
-								Inc. All rights reserved.
+								&copy; {new Date().getFullYear()} SecureRPC, Manifold Finance Inc. All rights reserved.
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</footer>
-	);
+	)
 }

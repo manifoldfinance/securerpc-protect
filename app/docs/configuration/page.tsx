@@ -6,12 +6,9 @@ export default function ConfigurationPage() {
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">securerpc.config.ts</h2>
 				<p className="mb-4">
-					The{" "}
-					<code className="bg-gray-800 px-2 py-1 rounded text-sm">
-						securerpc.config.ts
-					</code>{" "}
-					file is the main configuration file for your SecureRPC project. It
-					defines the networks, contracts, and other settings for your indexer.
+					The <code className="bg-gray-800 px-2 py-1 rounded text-sm">securerpc.config.ts</code> file is the main
+					configuration file for your SecureRPC project. It defines the networks, contracts, and other settings for your
+					indexer.
 				</p>
 			</section>
 
@@ -44,20 +41,16 @@ export default createConfig({
 				<h2 className="text-2xl font-semibold mb-4">Configuration Options</h2>
 				<ul className="list-disc pl-6 space-y-2">
 					<li>
-						<strong>networks</strong>: Define the blockchain networks you want
-						to index.
+						<strong>networks</strong>: Define the blockchain networks you want to index.
 					</li>
 					<li>
-						<strong>contracts</strong>: Specify the smart contracts you want to
-						index.
+						<strong>contracts</strong>: Specify the smart contracts you want to index.
 					</li>
 					<li>
-						<strong>startBlock</strong>: The block number to start indexing
-						from.
+						<strong>startBlock</strong>: The block number to start indexing from.
 					</li>
 					<li>
-						<strong>endBlock</strong>: (Optional) The block number to stop
-						indexing at.
+						<strong>endBlock</strong>: (Optional) The block number to stop indexing at.
 					</li>
 				</ul>
 			</section>
@@ -65,10 +58,9 @@ export default createConfig({
 			<section>
 				<h2 className="text-2xl font-semibold mb-4">Environment Variables</h2>
 				<p className="mb-4">
-					You can use environment variables in your configuration file. Make
-					sure to create a{" "}
-					<code className="bg-gray-800 px-2 py-1 rounded text-sm">.env</code>{" "}
-					file in your project root and add your variables there.
+					You can use environment variables in your configuration file. Make sure to create a{" "}
+					<code className="bg-gray-800 px-2 py-1 rounded text-sm">.env</code> file in your project root and add your
+					variables there.
 				</p>
 				<pre className="bg-gray-800 p-4 rounded-md overflow-x-auto">
 					<code className="text-sm text-white">
@@ -78,5 +70,5 @@ GOERLI_RPC_URL=https://goerli.infura.io/v3/YOUR-PROJECT-ID`}
 				</pre>
 			</section>
 		</div>
-	);
+	)
 }

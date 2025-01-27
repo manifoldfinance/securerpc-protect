@@ -1,9 +1,9 @@
-import { DocsNav } from "./docs-nav";
+import { DocsNav } from "./docs-nav"
 
 export default function DocsLayout({
 	children,
 }: {
-	children: React.ReactNode;
+	children: React.ReactNode
 }) {
 	return (
 		<div className="flex-grow container mx-auto px-4 py-12">
@@ -14,5 +14,5 @@ export default function DocsLayout({
 				<main className="flex-grow">{children}</main>
 			</div>
 		</div>
-	);
+	)
 }

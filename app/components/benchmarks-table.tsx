@@ -5,18 +5,10 @@ export function BenchmarksTable() {
 				<thead>
 					<tr className="border-b border-white/10">
 						<th className="text-left py-2 px-4 font-medium text-gray-400" />
-						<th className="text-left py-2 px-4 font-medium text-gray-400">
-							Privacy Level
-						</th>
-						<th className="text-left py-2 px-4 font-medium text-gray-400">
-							Processing Speed
-						</th>
-						<th className="text-left py-2 px-4 font-medium text-gray-400">
-							Revenue Distribution
-						</th>
-						<th className="text-left py-2 px-4 font-medium text-gray-400">
-							Leakage
-						</th>
+						<th className="text-left py-2 px-4 font-medium text-gray-400">Privacy Level</th>
+						<th className="text-left py-2 px-4 font-medium text-gray-400">Processing Speed</th>
+						<th className="text-left py-2 px-4 font-medium text-gray-400">Revenue Distribution</th>
+						<th className="text-left py-2 px-4 font-medium text-gray-400">Leakage</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -37,5 +29,5 @@ export function BenchmarksTable() {
 				</tbody>
 			</table>
 		</div>
-	);
+	)
 }

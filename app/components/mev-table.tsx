@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
 	type ColumnDef,
@@ -11,26 +11,19 @@ import {
 	getPaginationRowModel,
 	getSortedRowModel,
 	useReactTable,
-} from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown } from "lucide-react";
-import * as React from "react";
+} from "@tanstack/react-table"
+import { ArrowUpDown, ChevronDown } from "lucide-react"
+import * as React from "react"
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
 	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/components/ui/table";
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 const data = [
 	{
@@ -100,8 +93,7 @@ const data = [
 	},
 	{
 		activity: "NFT Reforging",
-		description:
-			"The NFT contract reforges an NFT to update the asset represented by the NFT.",
+		description: "The NFT contract reforges an NFT to update the asset represented by the NFT.",
 	},
 	{
 		activity: "Airdrop Claiming",
@@ -117,20 +109,18 @@ const data = [
 		description:
 			"The arbitrageur loans assets from Lending under the over/under-collateral deposit, then uses the loaned assets to conduct MEV activities, e.g., Cyclic Arbitrage.",
 	},
-];
+]
 
 export type MevActivity = {
-	activity: string;
-	description: string;
-};
+	activity: string
+	description: string
+}
 
 export const columns: ColumnDef<MevActivity>[] = [
 	{
 		accessorKey: "activity",
 		header: "MEV Activity",
-		cell: ({ row }) => (
-			<div className="font-medium">{row.getValue("activity")}</div>
-		),
+		cell: ({ row }) => <div className="font-medium">{row.getValue("activity")}</div>,
 	},
 	{
 		accessorKey: "description",
@@ -144,19 +134,16 @@ export const columns: ColumnDef<MevActivity>[] = [
 					Description
 					<ArrowUpDown className="ml-2 h-4 w-4" />
 				</Button>
-			);
+			)
 		},
 		cell: ({ row }) => <div>{row.getValue("description")}</div>,
 	},
-];
+]
 
 export function MevTable() {
-	const [sorting, setSorting] = React.useState<SortingState>([]);
-	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-		[],
-	);
-	const [columnVisibility, setColumnVisibility] =
-		React.useState<VisibilityState>({});
+	const [sorting, setSorting] = React.useState<SortingState>([])
+	const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
+	const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
 
 	const table = useReactTable({
 		data,
@@ -173,27 +160,20 @@ export function MevTable() {
 			columnFilters,
 			columnVisibility,
 		},
-	});
+	})
 
 	return (
 		<div className="w-full p-4">
 			<div className="flex items-center py-6">
 				<Input
 					placeholder="Filter activities..."
-					value={
-						(table.getColumn("activity")?.getFilterValue() as string) ?? ""
-					}
-					onChange={(event) =>
-						table.getColumn("activity")?.setFilterValue(event.target.value)
-					}
+					value={(table.getColumn("activity")?.getFilterValue() as string) ?? ""}
+					onChange={(event) => table.getColumn("activity")?.setFilterValue(event.target.value)}
 					className="max-w-sm border-white/10 text-white"
 				/>
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
-						<Button
-							variant="outline"
-							className="ml-auto border-white/10 text-white hover:bg-white/5"
-						>
+						<Button variant="outline" className="ml-auto border-white/10 text-white hover:bg-white/5">
 							Columns <ChevronDown className="ml-2 h-4 w-4" />
 						</Button>
 					</DropdownMenuTrigger>
@@ -207,13 +187,11 @@ export function MevTable() {
 										key={column.id}
 										className="capitalize text-white"
 										checked={column.getIsVisible()}
-										onCheckedChange={(value) =>
-											column.toggleVisibility(!!value)
-										}
+										onCheckedChange={(value) => column.toggleVisibility(!!value)}
 									>
 										{column.id}
 									</DropdownMenuCheckboxItem>
-								);
+								)
 							})}
 					</DropdownMenuContent>
 				</DropdownMenu>
@@ -226,14 +204,9 @@ export function MevTable() {
 								{headerGroup.headers.map((header) => {
 									return (
 										<TableHead key={header.id} className="text-white">
-											{header.isPlaceholder
-												? null
-												: flexRender(
-														header.column.columnDef.header,
-														header.getContext(),
-													)}
+											{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
 										</TableHead>
-									);
+									)
 								})}
 							</TableRow>
 						))}
@@ -241,26 +214,17 @@ export function MevTable() {
 					<TableBody>
 						{table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row) => (
-								<TableRow
-									key={row.id}
-									data-state={row.getIsSelected() && "selected"}
-								>
+								<TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id} className="text-white py-4">
-											{flexRender(
-												cell.column.columnDef.cell,
-												cell.getContext(),
-											)}
+											{flexRender(cell.column.columnDef.cell, cell.getContext())}
 										</TableCell>
 									))}
 								</TableRow>
 							))
 						) : (
 							<TableRow>
-								<TableCell
-									colSpan={columns.length}
-									className="h-24 text-center text-white"
-								>
+								<TableCell colSpan={columns.length} className="h-24 text-center text-white">
 									No results.
 								</TableCell>
 							</TableRow>
@@ -270,8 +234,8 @@ export function MevTable() {
 			</div>
 			<div className="flex items-center justify-end space-x-2 py-4">
 				<div className="text-sm text-gray-400">
-					{table.getFilteredSelectedRowModel().rows.length} of{" "}
-					{table.getFilteredRowModel().rows.length} row(s) selected.
+					{table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s)
+					selected.
 				</div>
 				<div className="space-x-2">
 					<Button
@@ -295,5 +259,5 @@ export function MevTable() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

@@ -1,6 +1,6 @@
-import { Github } from "lucide-react";
-import Link from "next/link";
-import { SiteSearch } from "../components/site-search";
+import { Github } from "lucide-react"
+import Link from "next/link"
+import { SiteSearch } from "../components/site-search"
 
 export default function ImpressumPage() {
 	return (
@@ -26,13 +26,11 @@ export default function ImpressumPage() {
 				</section>
 				<section>
 					<h2 className="text-2xl font-semibold mb-4">Register Information</h2>
-					<p className="mb-2">
-						Registered at: Amtsgericht Berlin-Charlottenburg
-					</p>
+					<p className="mb-2">Registered at: Amtsgericht Berlin-Charlottenburg</p>
 					<p className="mb-2">Registration Number: HRB 123456</p>
 					<p className="mb-2">VAT ID: DE123456789</p>
 				</section>
 			</main>
 		</>
-	);
+	)
 }

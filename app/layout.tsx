@@ -1,29 +1,22 @@
-import ErrorBoundary from "./components/error-boundary";
-import { Footer } from "./components/footer";
-import { Navigation } from "./components/navigation";
-import "./globals.css";
-import type { Metadata } from "next";
-import { generateMetadata } from "./components/metadata";
+import ErrorBoundary from "./components/error-boundary"
+import { Footer } from "./components/footer"
+import { Navigation } from "./components/navigation"
+import "./globals.css"
+import type { Metadata } from "next"
+import { generateMetadata } from "./components/metadata"
 
 // On the initial load, streaming is blocked until generateMetadata has fully resolved, including any content from loading.js.
 export const metadata: Metadata = generateMetadata({
 	title: "SecureRPC | Secure and Efficient RPC Infrastructure for Ethereum",
 	description:
 		"SecureRPC provides robust, high-performance, and MEV-protected RPC infrastructure for Ethereum developers and applications.",
-	keywords: [
-		"SecureRPC",
-		"Ethereum",
-		"RPC",
-		"Blockchain",
-		"MEV Protection",
-		"Web3",
-	],
-});
+	keywords: ["SecureRPC", "Ethereum", "RPC", "Blockchain", "MEV Protection", "Web3"],
+})
 
 export default function RootLayout({
 	children,
 }: {
-	children: React.ReactNode;
+	children: React.ReactNode
 }) {
 	return (
 		<html lang="en">
@@ -38,5 +31,5 @@ export default function RootLayout({
 				<Footer />
 			</body>
 		</html>
-	);
+	)
 }

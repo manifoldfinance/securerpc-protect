@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function CTASection() {
 	return (
@@ -8,13 +8,10 @@ export function CTASection() {
 			<div className="container mx-auto px-6">
 				<div className="flex flex-col md:flex-row justify-between items-center">
 					<div className="mb-8 md:mb-0 md:mr-8 max-w-2xl">
-						<h2 className="text-3xl font-bold mb-4">
-							Ready to experience enterprise-grade JSON-RPC?
-						</h2>
+						<h2 className="text-3xl font-bold mb-4">Ready to experience enterprise-grade JSON-RPC?</h2>
 						<p className="text-lg text-gray-400">
-							Get started with SecureRPC today and unlock the full potential of
-							your blockchain infrastructure with advanced privacy features and
-							MEV protection.
+							Get started with SecureRPC today and unlock the full potential of your blockchain infrastructure with
+							advanced privacy features and MEV protection.
 						</p>
 					</div>
 					<div className="flex flex-col sm:flex-row gap-4">
@@ -32,5 +29,5 @@ export function CTASection() {
 				</div>
 			</div>
 		</section>
-	);
+	)
 }

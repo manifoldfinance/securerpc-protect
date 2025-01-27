@@ -1,16 +1,15 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { APIEndpoint } from "../components/api-endpoint";
-import { BenchmarksTable } from "../components/benchmarks-table";
-import { CashCounter } from "../components/cash-counter";
-import { FeatureGrid } from "../components/feature-grid";
-import { RPCPlayground } from "./rpc-playground";
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { APIEndpoint } from "../components/api-endpoint"
+import { BenchmarksTable } from "../components/benchmarks-table"
+import { CashCounter } from "../components/cash-counter"
+import { FeatureGrid } from "../components/feature-grid"
+import { RPCPlayground } from "./rpc-playground"
 
 export const metadata = {
 	title: "RPC Playground",
-	description:
-		"Experiment with various JSON-RPC methods and query our API endpoint.",
-};
+	description: "Experiment with various JSON-RPC methods and query our API endpoint.",
+}
 
 export default function RPCPlaygroundPage() {
 	return (
@@ -23,22 +22,14 @@ export default function RPCPlaygroundPage() {
 						<div className="container mx-auto px-6 py-24">
 							<div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 								<div className="max-w-2xl">
-									<h1 className="text-4xl md:text-5xl font-bold mb-6">
-										RPC Playground
-									</h1>
+									<h1 className="text-4xl md:text-5xl font-bold mb-6">RPC Playground</h1>
 									<p className="text-lg text-gray-400 mb-8">
-										Experiment with various JSON-RPC methods and query our API
-										endpoint. Select a method, provide parameters if required,
-										and see the results in real-time.
+										Experiment with various JSON-RPC methods and query our API endpoint. Select a method, provide
+										parameters if required, and see the results in real-time.
 									</p>
 									<div className="flex flex-wrap gap-4">
-										<Button className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-black">
-											Get started
-										</Button>
-										<Button
-											variant="outline"
-											className="border-white/10 hover:bg-white/5"
-										>
+										<Button className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-black">Get started</Button>
+										<Button variant="outline" className="border-white/10 hover:bg-white/5">
 											Learn More
 										</Button>
 									</div>
@@ -82,5 +73,5 @@ export default function RPCPlaygroundPage() {
 				</section>
 			</main>
 		</div>
-	);
+	)
 }

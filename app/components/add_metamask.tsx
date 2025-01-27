@@ -1,32 +1,26 @@
-"use client";
+"use client"
 
-import type React from "react";
-import { Button } from "@/components/ui/button";
-import { PlusCircle } from "lucide-react";
+import type React from "react"
+import { Button } from "@/components/ui/button"
+import { PlusCircle } from "lucide-react"
 
 interface AddToMetaMaskProps {
-	name: string;
-	chainId: string;
-	token: string;
-	rpcs: string[];
-	be: string[];
+	name: string
+	chainId: string
+	token: string
+	rpcs: string[]
+	be: string[]
 }
 
-const AddToMetaMask: React.FC<AddToMetaMaskProps> = ({
-	name,
-	chainId,
-	token,
-	rpcs,
-	be,
-}) => {
+const AddToMetaMask: React.FC<AddToMetaMaskProps> = ({ name, chainId, token, rpcs, be }) => {
 	const handleAddToMetaMask = () => {
 		// @ts-ignore
 		if (typeof window !== "undefined" && !window.ethereum?.request) {
 			return alert(
 				"Have you installed MetaMask yet? If not, please do so.\n\nComputer: Once it is installed, you will be able to add the network to your MetaMask.\n\nPhone: Open the website through your MetaMask Browser to add the network.",
-			);
+			)
 		}
-		const startTime = Date.now();
+		const startTime = Date.now()
 		// @ts-ignore
 		window.ethereum
 			.request({
@@ -46,11 +40,10 @@ const AddToMetaMask: React.FC<AddToMetaMaskProps> = ({
 				],
 			})
 			.then((response) => {
-				const isAutomatedResponse = Date.now() - startTime < 100;
-				if (response === null && isAutomatedResponse)
-					alert(`The ${name} RPC is already added.`);
-			});
-	};
+				const isAutomatedResponse = Date.now() - startTime < 100
+				if (response === null && isAutomatedResponse) alert(`The ${name} RPC is already added.`)
+			})
+	}
 	return (
 		<Button
 			onClick={handleAddToMetaMask}
@@ -61,23 +54,15 @@ const AddToMetaMask: React.FC<AddToMetaMaskProps> = ({
 				<span className="text-sm text-white">Add to MetaMask</span>
 			</span>
 		</Button>
-	);
-};
-
-interface AddSecureRPCToMetaMaskProps {
-	rpcs: string[];
+	)
 }
 
-export const AddSecureRPCToMetaMask: React.FC<AddSecureRPCToMetaMaskProps> = ({
-	rpcs,
-}) => {
+interface AddSecureRPCToMetaMaskProps {
+	rpcs: string[]
+}
+
+export const AddSecureRPCToMetaMask: React.FC<AddSecureRPCToMetaMaskProps> = ({ rpcs }) => {
 	return (
-		<AddToMetaMask
-			name="SecureRPC Ethereum"
-			chainId="0x1"
-			token="ETH"
-			rpcs={rpcs}
-			be={["https://blockscout.com"]}
-		/>
-	);
-};
+		<AddToMetaMask name="SecureRPC Ethereum" chainId="0x1" token="ETH" rpcs={rpcs} be={["https://blockscout.com"]} />
+	)
+}

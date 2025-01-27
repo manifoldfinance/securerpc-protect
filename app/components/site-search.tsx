@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import * as React from "react"
+import { useRouter, useSearchParams, usePathname } from "next/navigation"
+import { Button } from "@/components/ui/button"
 import {
 	CommandDialog,
 	CommandEmpty,
@@ -10,8 +10,8 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from "@/components/ui/command-menu";
-import { Search } from "lucide-react";
+} from "@/components/ui/command-menu"
+import { Search } from "lucide-react"
 
 const pages = [
 	{
@@ -38,22 +38,22 @@ const pages = [
 		title: "About",
 		href: "/about",
 	},
-];
+]
 
 function SearchWithParams() {
-	const searchParams = useSearchParams();
-	const pathname = usePathname();
-	const { replace } = useRouter();
+	const searchParams = useSearchParams()
+	const pathname = usePathname()
+	const { replace } = useRouter()
 
 	const handleSearch = (value: string) => {
-		const params = new URLSearchParams(searchParams);
+		const params = new URLSearchParams(searchParams)
 		if (value) {
-			params.set("query", value);
+			params.set("query", value)
 		} else {
-			params.delete("query");
+			params.delete("query")
 		}
-		replace(`${pathname}?${params.toString()}`);
-	};
+		replace(`${pathname}?${params.toString()}`)
+	}
 
 	return (
 		<CommandInput
@@ -61,29 +61,29 @@ function SearchWithParams() {
 			onValueChange={handleSearch}
 			defaultValue={searchParams.get("query")?.toString()}
 		/>
-	);
+	)
 }
 
 export function SiteSearch() {
-	const [open, setOpen] = React.useState(false);
-	const router = useRouter();
+	const [open, setOpen] = React.useState(false)
+	const router = useRouter()
 
 	React.useEffect(() => {
 		const down = (e: KeyboardEvent) => {
 			if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-				e.preventDefault();
-				setOpen((open) => !open);
+				e.preventDefault()
+				setOpen((open) => !open)
 			}
-		};
+		}
 
-		document.addEventListener("keydown", down);
-		return () => document.removeEventListener("keydown", down);
-	}, []);
+		document.addEventListener("keydown", down)
+		return () => document.removeEventListener("keydown", down)
+	}, [])
 
 	const runCommand = React.useCallback((command: () => unknown) => {
-		setOpen(false);
-		command();
-	}, []);
+		setOpen(false)
+		command()
+	}, [])
 
 	return (
 		<>
@@ -111,7 +111,7 @@ export function SiteSearch() {
 								key={page.href}
 								value={page.title}
 								onSelect={() => {
-									runCommand(() => router.push(page.href));
+									runCommand(() => router.push(page.href))
 								}}
 							>
 								{page.title}
@@ -121,5 +121,5 @@ export function SiteSearch() {
 				</CommandList>
 			</CommandDialog>
 		</>
-	);
+	)
 }
