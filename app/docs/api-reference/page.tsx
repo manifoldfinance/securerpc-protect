@@ -41,7 +41,7 @@ export default function APIReferencePage() {
 					<li>
 						{/** @ts-ignore */}
 						<code className="bg-gray-800 px-2 py-1 rounded text-sm">
-							GET `/eth/v1/builder/header/{slot}/{parent_hash}/{pubkey}`
+							GET `/eth/v1/builder/header/slot/parent_hash/pubkey`
 						</code>
 						- Get execution payload header
 					</li>
