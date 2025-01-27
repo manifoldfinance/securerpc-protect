@@ -4,11 +4,10 @@ export default function ConfigurationPage() {
 			<h1 className="text-4xl font-bold mb-6">Configuration</h1>
 
 			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">securerpc.config.ts</h2>
+				<h2 className="text-2xl font-semibold mb-4">Wagmi</h2>
 				<p className="mb-4">
-					The <code className="bg-gray-800 px-2 py-1 rounded text-sm">securerpc.config.ts</code> file is the main
-					configuration file for your SecureRPC project. It defines the networks, contracts, and other settings for your
-					indexer.
+					Using <code className="bg-gray-800 px-2 py-1 rounded text-sm">Wagmi</code>, you can just set your RPC URL to:
+					`https://api.securerpc.com/v1`
 				</p>
 			</section>
 
@@ -16,7 +15,7 @@ export default function ConfigurationPage() {
 				<h2 className="text-2xl font-semibold mb-4">Basic Configuration</h2>
 				<pre className="bg-gray-800 p-4 rounded-md overflow-x-auto">
 					<code className="text-sm text-white">
-						{`import { createConfig } from '@securerpc/core'
+						{`import { createConfig } from '@wagmi/core'
 
 export default createConfig({
   networks: {
@@ -64,8 +63,8 @@ export default createConfig({
 				</p>
 				<pre className="bg-gray-800 p-4 rounded-md overflow-x-auto">
 					<code className="text-sm text-white">
-						{`MAINNET_RPC_URL=https://mainnet.infura.io/v3/YOUR-PROJECT-ID
-GOERLI_RPC_URL=https://goerli.infura.io/v3/YOUR-PROJECT-ID`}
+						{`MAINNET_RELAY_URL=https://mainnet-relay.securerpc.com
+HOLESKY_RELAY_URL=https://holesky-relay.infura.io/v3/YOUR-PROJECT-ID`}
 					</code>
 				</pre>
 			</section>

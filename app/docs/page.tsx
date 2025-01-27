@@ -23,8 +23,11 @@ export default function DocsPage() {
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">What is SecureRPC?</h2>
 				<p className="mb-4">
-					SecureRPC is an open-source framework for building robust, performant, and secure RPC infrastructure. It
-					allows you to easily manage and access remote procedure calls.
+					SecureRPC is a RPC Infrastructure Provider and a MEV Relay. A relay has several responsibilities: - APIs for
+					proposers (builder-spec), block builders and data transparency - Handling validator registrations and block
+					proposals in a scalable manner - Block escrow, data availability, redundancy - Simulate and verify blocks sent
+					by block-builders, rate-limit if necessary - correct amount of fees paid to most recent feeRecipient of
+					validator - correct block attributes and transactions within the gasLimit requested by the validator
 				</p>
 			</section>
 
@@ -35,7 +38,7 @@ export default function DocsPage() {
 						<strong>High Performance</strong>: SecureRPC offers high-throughput and low-latency RPC capabilities.
 					</li>
 					<li>
-						<strong>Secure Communication</strong>: Built with security best practices to protect your RPC calls.
+						<strong>Censorship Resistance</strong>: No Transaction filtering or censorship, by default.
 					</li>
 					<li>
 						<strong>Flexible and Extensible</strong>: Easily adaptable to various RPC needs and integrations.
@@ -51,7 +54,7 @@ export default function DocsPage() {
 
 			<section>
 				<h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
-				<p className="mb-4">To begin using SecureRPC, you can:</p>
+				<p className="mb-4">To begin using SecureRPC, you can just use `https://api.securerpc.com/v1` - or:</p>
 				<ol className="list-decimal pl-6 space-y-2">
 					<li>
 						Follow our{" "}

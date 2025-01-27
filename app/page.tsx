@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 		"SecureRPC offers high-performance, MEV-protected RPC infrastructure for Ethereum developers and applications. Experience secure and efficient blockchain interactions.",
 	keywords: ["SecureRPC", "Ethereum", "RPC", "MEV Protection", "Blockchain Infrastructure", "Web3 Development"],
 	openGraph: {
-		title: "Next.js",
+		title: "SecureRPC",
 		description: "Connect to Opportunities",
-		url: "https://nextjs.org",
-		siteName: "Next.js",
+		url: "https://securerpc.com",
+		siteName: "SecureRPC",
 		images: [
 			{
 				url: "https://securerpc.com/og-image.png", // Must be an absolute URL
@@ -49,7 +49,7 @@ export default function Page() {
 								<p className="text-[#31C4B9] text-sm font-medium mb-4">Manifold Finance</p>
 								<h1 className="text-4xl md:text-5xl font-bold mb-6">
 									Protect your trades <br />
-									Get 100% cash back
+									Get up to 100% cash back
 								</h1>
 								<p className="text-lg text-gray-400 mb-8">
 									SecureRPC provides robust, high-performance, and MEV-protected RPC infrastructure for Ethereum
@@ -97,7 +97,7 @@ export default function Page() {
 			*/}
 			{/* Benchmarks Section */}
 			<section className="container mx-auto px-6 py-24">
-				<h2 className="text-3xl font-bold mb-8">SecureRPC vs Standard RPC</h2>
+				<h2 className="text-3xl font-bold mb-8">SecureRPC vs Traditional RPC</h2>
 				<BenchmarksTable />
 			</section>
 

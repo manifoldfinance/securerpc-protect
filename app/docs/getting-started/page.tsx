@@ -11,10 +11,7 @@ export default function GettingStartedPage() {
 	return (
 		<div className="max-w-3xl">
 			<h1 className="text-4xl font-bold mb-6">Getting Started with SecureRPC</h1>
-			<p className="mb-8">
-				Welcome to the SecureRPC documentation. This guide will help you get started with using SecureRPC in your
-				projects.
-			</p>
+			<p className="mb-8">This guide is intended for Node Operators/Validators who want to join the SecureRPC relay.</p>
 
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">Quick Start</h2>
@@ -36,7 +33,7 @@ export default function GettingStartedPage() {
 									rel="noopener noreferrer"
 									className="text-blue-400 hover:underline"
 								>
-									mainnet-relay.securerpc.com/
+									https://mainnet-relay.securerpc.com/
 								</a>
 							</td>
 							<td className="border px-4 py-2 flex items-center">

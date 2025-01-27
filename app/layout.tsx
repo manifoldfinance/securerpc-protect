@@ -4,6 +4,7 @@ import { Navigation } from "./components/navigation"
 import "./globals.css"
 import type { Metadata } from "next"
 import { generateMetadata } from "./components/metadata"
+import { Analytics } from "@vercel/analytics/react"
 
 // On the initial load, streaming is blocked until generateMetadata has fully resolved, including any content from loading.js.
 export const metadata: Metadata = generateMetadata({
@@ -29,6 +30,7 @@ export default function RootLayout({
 				<Navigation />
 				<ErrorBoundary>{children}</ErrorBoundary>
 				<Footer />
+				<Analytics />
 			</body>
 		</html>
 	)
