@@ -1,0 +1,47 @@
+---
+title: Introducing SecureRPC Privacy Features
+description: Learn about our new suite of privacy-enhancing features for Ethereum transactions
+date: 2025-01-03
+author: SecureRPC Team
+---
+
+# Introducing SecureRPC Privacy Features
+
+Posted on January 3, 2025 by SecureRPC Team
+
+We're excited to announce the launch of our comprehensive privacy features suite, designed to protect your transactions and maintain anonymity on the Ethereum network.
+
+## Key Features
+
+### 1. MEV Protection
+
+Our MEV protection system ensures that your transactions are safe from front-running and sandwich attacks. By utilizing a private transaction pool and sophisticated routing algorithms, we minimize the risk of value extraction.
+
+### 2. Private Transaction Pool
+
+Transactions submitted through SecureRPC are held in a private pool before being broadcast to the network. This prevents others from viewing and potentially exploiting your pending transactions.
+
+### 3. Flashbots Integration
+
+We've integrated directly with Flashbots to provide additional protection and optimal transaction ordering. This helps ensure your transactions are included in blocks efficiently and safely.
+
+### 4. Transaction Privacy
+
+Our infrastructure includes several privacy-enhancing features:
+
+- Transaction obfuscation
+- Distributed submission
+- Timing randomization
+- Network privacy
+
+## Getting Started
+
+To start using these privacy features, simply include the appropriate headers in your RPC requests:
+
+```javascript
+const web3 = new Web3('https://api.securerpc.com/v1');
+web3.setRequestHeader('X-Privacy-Level', 'maximum');
+
+// Your transaction will now use all privacy features
+const tx = await web3.eth.sendTransaction({...});
+
