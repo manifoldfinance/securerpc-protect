@@ -1,56 +1,87 @@
 export default function APIReferencePage() {
 	return (
 		<div className="max-w-3xl">
-			<h1 className="text-4xl font-bold mb-6">API Reference</h1>
+			<h1 className="text-4xl font-bold mb-6">SecureRPC Relay</h1>
 
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">Overview</h2>
-				<p className="mb-4">
-					This API reference provides detailed information about the SecureRPC API, including available methods,
-					parameters, and response formats.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">Endpoints</h2>
-				<ul className="list-disc pl-6 space-y-2">
-					<li>
-						<code className="bg-gray-800 px-2 py-1 rounded text-sm">/graphql</code> - GraphQL API endpoint
-					</li>
-					<li>
-						<code className="bg-gray-800 px-2 py-1 rounded text-sm">/health</code> - Health check endpoint
-					</li>
-					<li>
-						<code className="bg-gray-800 px-2 py-1 rounded text-sm">/metrics</code> - Metrics endpoint
-					</li>
+				<p className="mb-4">MEV-Boost Relay API specification v1. A relay has several core responsibilities:</p>
+				<ul className="list-disc pl-6 space-y-2 mb-4">
+					<li>APIs for proposers, block builders and data transparency</li>
+					<li>Handling validator registrations and block proposals in a scalable manner</li>
+					<li>Block escrow, data availability, redundancy</li>
+					<li>Simulate and verify blocks sent by block-builders, rate-limit if necessary</li>
 				</ul>
 			</section>
 
 			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">GraphQL API</h2>
-				<p className="mb-4">The main API endpoint is a GraphQL API. You can use this to query your indexed data.</p>
-				<h3 className="text-xl font-semibold mb-2">Example Query</h3>
-				<pre className="bg-gray-800 p-4 rounded-md overflow-x-auto">
-					<code className="text-sm text-white">
-						{`query {
-  transfers(first: 10, orderBy: timestamp, orderDirection: desc) {
-    id
-    from
-    to
-    value
-    timestamp
-  }
-}`}
-					</code>
-				</pre>
+				<h2 className="text-2xl font-semibold mb-4">Data Types</h2>
+				<p className="mb-4">
+					Reference implementation of data types with correct SSZ encoding and signing routines can be found in the
+					go-boost-utils repository.
+				</p>
+				<h3 className="text-xl font-semibold mb-2">Core Types</h3>
+				<ul className="list-disc pl-6 space-y-2">
+					<li>ValidatorRegistration</li>
+					<li>SignedBuilderBid</li>
+					<li>SignedBlindedBeaconBlock</li>
+					<li>ExecutionPayload</li>
+				</ul>
 			</section>
 
-			<section>
-				<h2 className="text-2xl font-semibold mb-4">Error Handling</h2>
-				<p className="mb-4">
-					Errors are returned in the standard GraphQL error format. Each error object contains a message field and
-					optional locations and extensions fields.
-				</p>
+			<section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">API Endpoints</h2>
+
+				<h3 className="text-xl font-semibold mb-2">Proposer API</h3>
+				<ul className="list-disc pl-6 space-y-2 mb-4">
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">POST `/eth/v1/builder/validators`</code>- Register
+						validator
+					</li>
+					<li>
+						{/** @ts-ignore */}
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">
+							GET `/eth/v1/builder/header/{slot}/{parent_hash}/{pubkey}`
+						</code>
+						- Get execution payload header
+					</li>
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">POST `/eth/v1/builder/blinded_blocks`</code>- Submit
+						signed blinded block
+					</li>
+				</ul>
+
+				<h3 className="text-xl font-semibold mb-2">Builder API</h3>
+				<ul className="list-disc pl-6 space-y-2 mb-4">
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">GET `/relay/v1/builder/validators`</code>- Get
+						validator registrations
+					</li>
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">POST `/relay/v1/builder/blocks`</code>- Submit new
+						block
+					</li>
+				</ul>
+
+				<h3 className="text-xl font-semibold mb-2">Data API</h3>
+				<ul className="list-disc pl-6 space-y-2">
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">
+							GET `/relay/v1/data/bidtraces/proposer_payload_delivered`
+						</code>
+						- Get delivered payload BidTraces
+					</li>
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">
+							GET `/relay/v1/data/bidtraces/builder_blocks_received`
+						</code>
+						- Get received builder blocks
+					</li>
+					<li>
+						<code className="bg-gray-800 px-2 py-1 rounded text-sm">GET `/relay/v1/data/validator_registration`</code>-
+						Get validator registration status
+					</li>
+				</ul>
 			</section>
 		</div>
 	)

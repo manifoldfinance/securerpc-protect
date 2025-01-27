@@ -52,17 +52,23 @@ export default function Page() {
 									Get up to 100% cash back
 								</h1>
 								<p className="text-lg text-gray-400 mb-8">
-									SecureRPC provides robust, high-performance, and MEV-protected RPC infrastructure for Ethereum
-									developers and applications
+									100% Protection, unlike MEV Share or MEV Blocker. Works with any wallet and dapp, including MetaMask.
 								</p>
 								<div className="flex flex-wrap gap-4">
-									<Button className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-white font-semibold">Get started</Button>
-									<Button
-										variant="outline"
-										className="border-white/10 hover:bg-white/5 text-white hover:text-[#31C4B9]"
+									<Link
+										href="/docs/getting-started"
+										className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-white font-semibold px-6 py-3 rounded-lg"
 									>
-										Why SecureRPC?
-									</Button>
+										<Button className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-white font-semibold">Get started</Button>
+									</Link>
+									<Link href="/comparison">
+										<Button
+											variant="outline"
+											className="border-white/10 hover:bg-white/5 text-white hover:text-[#31C4B9]"
+										>
+											Why SecureRPC?
+										</Button>
+									</Link>
 									<AddSecureRPCToMetaMask rpcs={["https://api.securerpc.com/v1"]} />
 								</div>
 								{/** 	  <Button variant="ghost" className="mt-4 text-white hover:text-white hover:bg-white/5">

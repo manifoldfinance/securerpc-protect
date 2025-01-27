@@ -47,12 +47,11 @@ export default function QuickStartPage() {
 				<section className="mb-8">
 					<h2 className="text-2xl font-semibold mb-4">2. Configuration</h2>
 					<p className="mb-4">
-						Create a <code className="bg-gray-800 px-2 py-1 rounded text-sm">securerpc.config.ts</code> file in your
-						project root:
+						Example: <code className="bg-gray-800 px-2 py-1 rounded text-sm">Wagmi</code>
 					</p>
 					<pre className="bg-gray-800 p-4 rounded-md overflow-x-auto">
 						<code className="text-sm text-white">
-							{`import { createConfig } from '@securerpc/core'
+							{`import { createConfig } from '@wagmi/core'
 
 export default createConfig({
   networks: {
