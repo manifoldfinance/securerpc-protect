@@ -1,88 +1,65 @@
-import { Github, Send, Twitter } from "lucide-react"
+"use client"
+
+"use client"
+
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
-
-const footerLinks = [
-	{ name: "Home", href: "/" },
-	{ name: "Docs", href: "/docs" },
-	{ name: "Solutions", href: "/solutions" },
-	{ name: "Changelog", href: "/changelog" },
-	{ name: "About", href: "/about" },
-	//	{ name: "Impressum", href: "/impressum" },
-	{ name: "Security", href: "/security" },
-]
-
-const socialLinks = [
-	{ icon: Github, href: "https://github.com/manifoldfinance" },
-	{ icon: Twitter, href: "https://twitter.com/foldfinance" },
-	{ icon: Send, href: "https://t.me/manifoldfinance" },
-]
+import { Twitter, Github, Send } from "lucide-react"
 
 export function Footer() {
-	return (
-		<footer className="relative bg-[#141414] border-t border-white/5">
-			{/* Gradient overlay */}
-			<div className="absolute inset-0 bg-gradient-to-t from-[#31C4B9]/5 to-transparent pointer-events-none" />
+  return (
+    <footer className="bg-[#141414] border-t border-white/10 py-6">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          {/* Logo, Status Badges, and Copyright */}
+          <div className="flex flex-col items-center md:items-start space-y-2">
+            <div className="flex items-center space-x-4">
+         
+              <Link href="/" className="text-lg font-semibold">
+			  ❄️ 💊
+              </Link>
+            </div>
+            <div className="flex space-x-2">
+              <Badge className="bg-green-900/50 text-green-400 hover:bg-green-900/50" variant="secondary">
+                API: Operational
+              </Badge>
+              <Badge className="bg-blue-900/50 text-blue-400 hover:bg-blue-900/50" variant="secondary">
+                Relay Protect: Online
+              </Badge>
+            </div>
+            <p className="text-sm text-gray-400">Manifold Finance, Inc. All rights reserved.</p>
+          </div>
 
-			<div className="relative container mx-auto px-6 py-16">
-				<div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-					{/* Navigation Links */}
-					<nav className="grid grid-cols-2 sm:flex sm:items-center gap-x-8 gap-y-4">
-						{footerLinks.map((link) => (
-							<Link
-								key={link.name}
-								href={link.href}
-								className="text-sm text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-0.5"
-							>
-								{link.name}
-							</Link>
-						))}
-					</nav>
-
-					{/* Right Section */}
-					<div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-						{/* Social Links */}
-						<div className="flex items-center gap-4">
-							{socialLinks.map((link) => (
-								<Link
-									key={link.href}
-									href={link.href}
-									className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200"
-								>
-									<link.icon size={20} />
-								</Link>
-							))}
-						</div>
-
-						{/* System Status */}
-						{/*		<div className="flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10">
-							<span className="flex items-center">
-								<span className="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse" />
-								<span className="text-sm text-gray-400">
-									All systems operational
-								</span>
-							</span>
-						</div>
-					</div>
-				</div> */}
-						<div className="flex items-center gap-3">
-							<Badge className="bg-green-900/50 text-green-400 hover:bg-green-900/50" variant="secondary">
-								API: Operational
-							</Badge>
-							<Badge className="bg-yellow-900/50 text-yellow-400 hover:bg-yellow-900/50" variant="secondary">
-								Warrant Canary: Active
-							</Badge>
-						</div>
-
-						{/* Copyright */}
-						<div className="mt-12 pt-6 border-t border-white/5">
-							<div className="text-sm text-gray-500 hover:text-gray-400 transition-colors duration-200">
-								&copy; {new Date().getFullYear()} SecureRPC, Manifold Finance Inc. All rights reserved.
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	)
+          {/* Social Links */}
+          <div className="flex items-center space-x-4">
+            <Link
+              href="https://twitter.com/foldfinance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Twitter className="w-5 h-5" strokeWidth={1.5} />
+            </Link>
+            <Link
+              href="https://t.me/manifoldfinance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Send className="w-5 h-5" strokeWidth={1.5} />
+            </Link>
+            <Link
+              href="https://github.com/manifoldfinacne/securerpc-protect"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Github className="w-5 h-5" strokeWidth={1.5} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
 }
+

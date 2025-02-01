@@ -11,44 +11,17 @@ type ChangelogEntry = {
 
 const changelogEntries: ChangelogEntry[] = [
 	{
-		version: "0.12.0",
-		date: "2023-07-15",
+		version: "0.1.0",
+		date: "2025-01-15",
 		changes: [
-			"Added support for multiple networks in a single project",
+			"Launched new website",
 			"Improved error handling and reporting",
-			"Enhanced performance for large-scale indexing operations",
+			"Enhanced performance for large-scale submission operations",
 			"Updated documentation with new examples and best practices",
 		],
 	},
-	{
-		version: "0.11.2",
-		date: "2023-06-30",
-		changes: [
-			"Fixed a bug in the GraphQL schema generation",
-			"Improved stability of real-time subscriptions",
-			"Added new CLI commands for easier project management",
-		],
-	},
-	{
-		version: "0.11.1",
-		date: "2023-06-15",
-		changes: [
-			"Patched security vulnerability in dependency",
-			"Optimized database queries for faster data retrieval",
-			"Added support for custom GraphQL resolvers",
-		],
-	},
-	{
-		version: "0.11.0",
-		date: "2023-06-01",
-		changes: [
-			"Introduced new plugin system for extending SecureRPC's functionality",
-			"Revamped the configuration file structure for better organization",
-			"Added support for TypeScript 5.0",
-			"Improved documentation and added more code examples",
-		],
-	},
-]
+];
+
 
 export default function ChangelogPage() {
 	return (
@@ -78,7 +51,7 @@ export default function ChangelogPage() {
 					</div>
 
 					<div className="mt-12">
-						<Button asChild>
+					   <Button variant="outline" asChild>
 							<Link href="/docs">Explore Documentation</Link>
 						</Button>
 					</div>

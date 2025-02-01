@@ -1,0 +1,7 @@
+# *
+User-agent: *
+Allow: /
+# Host
+Host: https://securerpc.com
+# Sitemaps
+Sitemap: https://securerpc.com/sitemap.xml

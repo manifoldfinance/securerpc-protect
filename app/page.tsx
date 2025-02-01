@@ -52,10 +52,11 @@ export default function Page() {
 									Get up to 100% cash back
 								</h1>
 								<p className="text-lg text-gray-400 mb-8">
-									100% Protection, unlike MEV Share or MEV Blocker. Works with any wallet and dapp, including MetaMask.
+									100% Front running and arbitrage Protection, unlike MEV Share or MEV Blocker.  <br></br>
+									Works with any wallet and dapp, including MetaMask.
 								</p>
 								<div className="flex flex-wrap gap-4">
-									<Link
+								{/**<Link
 										href="/docs/getting-started"
 										className="bg-[#31C4B9] hover:bg-[#31C4B9]/90 text-white font-semibold px-6 py-3 rounded-lg"
 									>
@@ -69,6 +70,7 @@ export default function Page() {
 											Why SecureRPC?
 										</Button>
 									</Link>
+									 */}	
 									<AddSecureRPCToMetaMask rpcs={["https://api.securerpc.com/v1"]} />
 								</div>
 								{/** 	  <Button variant="ghost" className="mt-4 text-white hover:text-white hover:bg-white/5">

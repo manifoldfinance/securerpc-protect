@@ -43,11 +43,8 @@ export default function AboutPage() {
 				</ul>
 
 				<div className="flex flex-col sm:flex-row gap-4">
-					<Button asChild>
-						<Link href="/docs">Get Started</Link>
-					</Button>
 					<Button variant="outline" asChild>
-						<Link href="https://github.com/manifoldfinance">View on GitHub</Link>
+						<Link href="https://securerpc.com/docs">Documentation →</Link>
 					</Button>
 				</div>
 			</main>
