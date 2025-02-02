@@ -7,6 +7,7 @@ import { CommandMenu } from "./components/command-menu"
 import { SearchButton } from "./components/search-button"
 import { Navigation as MainNav } from "./components/navigation"
 import type React from "react" // Import React
+import { SettingsDrawer } from "./components/settings-drawer"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
@@ -77,6 +78,7 @@ export default function RootLayout({
 							<div className="flex items-center space-x-4">
 								<MainNav />
 								<SearchButton />
+								<SettingsDrawer />
 							</div>
 						</div>
 					</header>
