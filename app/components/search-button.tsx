@@ -1,11 +1,24 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useCallback } from "react"
+import { useCallback, useEffect } from "react"
 
 export function SearchButton() {
 	const handleClick = useCallback(() => {
 		document.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }))
+	}, [])
+
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.metaKey && event.key === "k") {
+				event.preventDefault()
+				const searchButton = document.querySelector<HTMLButtonElement>('[data-framer-name="Search Container"] button')
+				if (searchButton) searchButton.click()
+			}
+		}
+
+		document.addEventListener("keydown", handleKeyDown)
+		return () => document.removeEventListener("keydown", handleKeyDown)
 	}, [])
 
 	return (

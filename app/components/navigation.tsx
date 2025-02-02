@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card";
+import { useState, useRef, useEffect } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Card, CardContent } from "@/components/ui/card"
 
 const tabs = [
 	{ name: "Home", href: "/" },
@@ -11,41 +11,41 @@ const tabs = [
 	{ name: "Solutions", href: "/solutions" },
 	{ name: "Blog", href: "/blog" },
 	{ name: "Comparison", href: "/comparison" },
-];
+]
 
 export function Navigation() {
-	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-	const [hoverStyle, setHoverStyle] = useState({});
-	const [activeStyle, setActiveStyle] = useState({ left: "0px", width: "0px" });
-	const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
-	const pathname = usePathname();
+	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+	const [hoverStyle, setHoverStyle] = useState({})
+	const [activeStyle, setActiveStyle] = useState({ left: "0px", width: "0px" })
+	const tabRefs = useRef<(HTMLDivElement | null)[]>([])
+	const pathname = usePathname()
 
 	useEffect(() => {
 		if (hoveredIndex !== null) {
-			const hoveredElement = tabRefs.current[hoveredIndex];
+			const hoveredElement = tabRefs.current[hoveredIndex]
 			if (hoveredElement) {
-				const { offsetLeft, offsetWidth } = hoveredElement;
+				const { offsetLeft, offsetWidth } = hoveredElement
 				setHoverStyle({
 					left: `${offsetLeft}px`,
 					width: `${offsetWidth}px`,
-				});
+				})
 			}
 		}
-	}, [hoveredIndex]);
+	}, [hoveredIndex])
 
 	useEffect(() => {
-		const activeIndex = tabs.findIndex((tab) => tab.href === pathname);
+		const activeIndex = tabs.findIndex((tab) => tab.href === pathname)
 		if (activeIndex !== -1) {
-			const activeElement = tabRefs.current[activeIndex];
+			const activeElement = tabRefs.current[activeIndex]
 			if (activeElement) {
-				const { offsetLeft, offsetWidth } = activeElement;
+				const { offsetLeft, offsetWidth } = activeElement
 				setActiveStyle({
 					left: `${offsetLeft}px`,
 					width: `${offsetWidth}px`,
-				});
+				})
 			}
 		}
-	}, [pathname]);
+	}, [pathname])
 
 	return (
 		<Card className="w-full border-none shadow-none bg-transparent">
@@ -72,7 +72,7 @@ export function Navigation() {
 							<div
 								key={index}
 								ref={(el: HTMLDivElement | null) => {
-									if (el) tabRefs.current[index] = el;
+									if (el) tabRefs.current[index] = el
 								}}
 								className={`px-3 py-2 cursor-pointer transition-colors duration-300 h-[30px] ${
 									pathname === tab.href ? "text-white" : "text-gray-400"
@@ -81,7 +81,7 @@ export function Navigation() {
 								onMouseLeave={() => setHoveredIndex(null)}
 							>
 								<Link
-									href={tab.href || ''}
+									href={tab.href || ""}
 									className="text-sm font-medium leading-5 whitespace-nowrap flex items-center justify-center h-full"
 								>
 									{tab.name}
@@ -92,5 +92,5 @@ export function Navigation() {
 				</div>
 			</CardContent>
 		</Card>
-	);
+	)
 }

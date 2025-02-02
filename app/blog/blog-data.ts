@@ -1,22 +1,22 @@
 export interface BlogPost {
-  slug: string
-  date: string
-  title: string
-  author: string
-  tags: string[]
-  excerpt: string
-  content: string
+	slug: string
+	date: string
+	title: string
+	author: string
+	tags: string[]
+	excerpt: string
+	content: string
 }
 
 const blogPosts: BlogPost[] = [
-  {
-    slug: "introducing-securerpc-privacy-features",
-    date: "January 3, 2025",
-    title: "Introducing SecureRPC Privacy Features",
-    author: "SecureRPC Team",
-    tags: ["privacy", "feature", "security"],
-    excerpt: "Learn about our new suite of privacy-enhancing features for Ethereum transactions.",
-    content: `
+	{
+		slug: "introducing-securerpc-privacy-features",
+		date: "January 3, 2025",
+		title: "Introducing SecureRPC Privacy Features",
+		author: "SecureRPC Team",
+		tags: ["privacy", "feature", "security"],
+		excerpt: "Learn about our new suite of privacy-enhancing features for Ethereum transactions.",
+		content: `
       We're excited to announce the launch of our comprehensive privacy features suite, designed to protect your transactions and maintain anonymity on the Ethereum network.
 
       ## Key Features
@@ -54,16 +54,16 @@ const blogPosts: BlogPost[] = [
       const tx = await web3.eth.sendTransaction({...});
       \`\`\`
     `,
-  },
-  {
-    slug: "securerpc-performance-boost",
-    date: "December 15, 2024",
-    title: "SecureRPC Performance Boost: 50% Faster Responses",
-    author: "Jane Doe",
-    tags: ["performance", "update", "infrastructure"],
-    excerpt:
-      "We've significantly improved our infrastructure, resulting in 50% faster API responses. Learn about the changes and how they benefit you.",
-    content: `
+	},
+	{
+		slug: "securerpc-performance-boost",
+		date: "December 15, 2024",
+		title: "SecureRPC Performance Boost: 50% Faster Responses",
+		author: "Jane Doe",
+		tags: ["performance", "update", "infrastructure"],
+		excerpt:
+			"We've significantly improved our infrastructure, resulting in 50% faster API responses. Learn about the changes and how they benefit you.",
+		content: `
       We're thrilled to announce a major performance upgrade to SecureRPC. Our team has been working tirelessly to optimize our infrastructure, and the results are in: API responses are now 50% faster on average.
 
       ## What We Did
@@ -92,14 +92,13 @@ const blogPosts: BlogPost[] = [
 
       We're committed to continually improving SecureRPC to provide you with the best possible experience. Stay tuned for more updates!
     `,
-  },
+	},
 ]
 
 export function getAllBlogPosts(): BlogPost[] {
-  return blogPosts
+	return blogPosts
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.slug === slug)
+	return blogPosts.find((post) => post.slug === slug)
 }
-

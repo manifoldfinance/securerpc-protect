@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { Footer } from "./components/footer";
-import ErrorBoundary from "./components/error-boundary";
-import "./globals.css";
-import type { Metadata } from "next";
-import { CommandMenu } from "./components/command-menu";
-import { SearchButton } from "./components/search-button";
-import { Navigation as MainNav } from "./components/navigation";
-import type React from "react"; // Import React
+import Link from "next/link"
+import { Footer } from "./components/footer"
+import ErrorBoundary from "./components/error-boundary"
+import "./globals.css"
+import type { Metadata } from "next"
+import { CommandMenu } from "./components/command-menu"
+import { SearchButton } from "./components/search-button"
+import { Navigation as MainNav } from "./components/navigation"
+import type React from "react" // Import React
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
@@ -17,15 +17,7 @@ export const metadata: Metadata = {
 	},
 	description:
 		"SecureRPC is a bare-metal, fully conformant JSON-RPC/gRPC infrastructure plane that aims to perform well and meet the highest requirements for censorship resistance and privacy.",
-	keywords: [
-		"SecureRPC",
-		"JSON-RPC",
-		"gRPC",
-		"Ethereum",
-		"blockchain",
-		"MEV protection",
-		"privacy",
-	],
+	keywords: ["SecureRPC", "JSON-RPC", "gRPC", "Ethereum", "blockchain", "MEV protection", "privacy"],
 	authors: [{ name: "Manifold Finance" }],
 	creator: "Manifold Finance",
 	publisher: "SecureRPC",
@@ -47,7 +39,7 @@ export const metadata: Metadata = {
 				url: "https://securerpc.com/og-image.jpg",
 				width: 1200,
 				height: 630,
-				alt: "SecureRPC - Enterprise Infrastructure",
+				alt: "SecureRPC - Keeping Ethereum Censorship Free since 2020",
 			},
 		],
 	},
@@ -65,12 +57,12 @@ export const metadata: Metadata = {
 		apple: "/apple-touch-icon.png",
 	},
 	manifest: "https://securerpc.com/site.webmanifest",
-};
+}
 
 export default function RootLayout({
 	children,
 }: {
-	children: React.ReactNode;
+	children: React.ReactNode
 }) {
 	return (
 		<html lang="en">
@@ -94,5 +86,5 @@ export default function RootLayout({
 				</ErrorBoundary>
 			</body>
 		</html>
-	);
+	)
 }
