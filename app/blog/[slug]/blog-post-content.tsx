@@ -21,4 +21,3 @@ export default function BlogPostContent({ content }: { content: string }) {
 
   return <MDXRemote {...mdxSource} />
 }
-

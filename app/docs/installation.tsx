@@ -1,21 +1,21 @@
 export default function InstallationPage() {
-	return (
-		<div className="max-w-3xl">
-			<h1 className="text-4xl font-bold mb-6">Installing SecureRPC</h1>
+  return (
+    <div className="max-w-3xl">
+      <h1 className="text-4xl font-bold mb-6">Installing SecureRPC</h1>
 
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">Prerequisites</h2>
-				<p className="mb-4">Before you begin, ensure you have the following installed:</p>
-				<ul className="list-disc pl-6 space-y-2">
-					<li>Node.js (version 14 or later)</li>
-					<li>npm or yarn</li>
-				</ul>
-			</section>
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">Installation Steps</h2>
-				<pre className="bg-gray-800 p-4 rounded-md overflow-x-auto mt-2">
-					<code className="text-sm text-white">
-						{`interface AddToMetaMaskProps {
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Prerequisites</h2>
+        <p className="mb-4">Before you begin, ensure you have the following installed:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Node.js (version 14 or later)</li>
+          <li>npm or yarn</li>
+        </ul>
+      </section>
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Installation Steps</h2>
+        <pre className="bg-gray-800 p-4 rounded-md overflow-x-auto mt-2">
+          <code className="text-sm text-white">
+            {`interface AddToMetaMaskProps {
 		name: string
 		chainId: string
 		token: string
@@ -77,23 +77,23 @@ export default function InstallationPage() {
 			<AddToMetaMask name="SecureRPC Ethereum" chainId="0x1" token="ETH" rpcs={rpcs} be={["https://blockscout.com"]} />
 		)
 	}`}
-					</code>
-				</pre>
-			</section>
-			<section>
-				<h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
-				<p className="mb-4">
-					Now that you have SecureRPC installed, you can proceed to the{" "}
-					<a href="/docs/configuration" className="text-blue-400 hover:underline">
-						Configuration
-					</a>{" "}
-					guide to set up your project, or jump right into the{" "}
-					<a href="/docs/quick-start" className="text-blue-400 hover:underline">
-						Quick Start
-					</a>{" "}
-					guide to begin building.
-				</p>
-			</section>
-		</div>
-	)
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Next Steps</h2>
+        <p className="mb-4">
+          Now that you have SecureRPC installed, you can proceed to the{" "}
+          <a href="/docs/configuration" className="text-blue-400 hover:underline">
+            Configuration
+          </a>{" "}
+          guide to set up your project, or jump right into the{" "}
+          <a href="/docs/quick-start" className="text-blue-400 hover:underline">
+            Quick Start
+          </a>{" "}
+          guide to begin building.
+        </p>
+      </section>
+    </div>
+  )
 }
