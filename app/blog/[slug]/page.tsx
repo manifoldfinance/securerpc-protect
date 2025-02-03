@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { getBlogPostBySlug, getAllBlogPosts } from "../blog-data"
-//import { MDXRemote } from "next-mdx-remote/rsc"
-import { MDXRemote } from "remote-mdx/rsc"
 
+//import { MDXRemote } from "remote-mdx/rsc"
+import BlogPostContent from "./blog-post-content"
 export async function generateStaticParams() {
 	const posts = getAllBlogPosts()
 	return posts.map((post) => ({
@@ -35,7 +35,8 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 					<h1 className="text-4xl font-bold mb-4">{post.title}</h1>
 					<p className="text-xl text-gray-400">By {post.author}</p>
 				</div>
-				<MDXRemote source={post.content} />
+			{/** <MDXRemote source={post.content} />  */}
+				<BlogPostContent content={post.content} />
 			</article>
 		</div>
 	)
